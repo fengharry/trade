@@ -8,9 +8,10 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 
-FROM = 'fengharry02@126.com'
-TO = 'fengharry02@126.com'
-server = smtplib.SMTP('smtp.126.com')
+ADDR = 'smtp.qq.com'
+FROM = 'fengharry02@qq.com'
+TO = 'fengharry02@qq.com'
+server = smtplib.SMTP_SSL(ADDR)
 TEST = 0;
 
 class stock_info:
@@ -43,7 +44,8 @@ class stock_info:
         return
        
 if __name__ == "__main__":  
-    server.login(FROM, 'test02') 
+    server.ehlo(ADDR)
+    server.login(FROM, 'cltduxqlmbmndjhg') 
     
     a1 = stock_info('002422')
     a2 = stock_info('000536')
