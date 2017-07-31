@@ -14,9 +14,8 @@ server = smtplib.SMTP('smtp.126.com')
 TEST = 0;
 
 class stock_info:
-    def __init__(self, a, b):
+    def __init__(self, a):
         self.stock_code = a; # 股票代码
-        self.stock_num = b; # 大单手数
         self.price = 0; # 比较价格
         
         self.message = MIMEText('Hello', 'plain', 'utf-8')
@@ -46,8 +45,8 @@ class stock_info:
 if __name__ == "__main__":  
     server.login(FROM, 'test02') 
     
-    a1 = stock_info('002422', 200)
-    a2 = stock_info('000536', 600)
+    a1 = stock_info('002422')
+    a2 = stock_info('000536')
       
     while 1:
         a1.check_code()
