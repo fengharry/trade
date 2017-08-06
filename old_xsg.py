@@ -28,9 +28,9 @@ def func2(market, code):
 
 if __name__ == "__main__":   
     
-    c = api.connect('101.227.73.20', 7709)
+    c = api.connect('119.147.212.81', 7709)
     if not c:
         print('cannot connect to server')
         api.disconnect()
-    
-    func1('2017', '1')  
+    for i in range(1,13):
+        func1('2017', i)  
